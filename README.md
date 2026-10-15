@@ -1,6 +1,6 @@
-# Energy-aware sampling of a river-level sensor with an EnKF and MPC
+# Energy-aware sampling of an environmental monitoring sensor with an EnKF and MPC
 
-A river-level sensor that reports more often gives a flood forecast more to work with, but it also drains its battery faster. This repository holds one Jupyter notebook that measures that trade-off at USGS site 07022000 (Mississippi River at Thebes, IL) and uses it to schedule the sensor's sampling rate.
+A stream-level sensor that reports more often gives a forecast more to work with, but it also drains its battery faster. This repository holds one Jupyter notebook that measures that trade-off at USGS site 07022000 (Mississippi River at Thebes, IL) and uses it to schedule the sensor's sampling rate.
 
 ## What the notebook does
 
@@ -45,7 +45,7 @@ Developed with Python 3.13.
 ```bash
 git clone https://github.com/NihalAhmad322/enkf-mpc-adaptive-sampling.git
 cd enkf-mpc-adaptive-sampling
-pip install numpy==2.3.2 pandas==2.3.1 scipy==1.16.0 scikit-learn==1.9.0 matplotlib==3.11.2 seaborn==0.13.2 tqdm==4.68.2 pyarrow==23.0.1 jupyter
+pip install -r requirements.txt
 jupyter notebook enkf_mpc_adaptive_sampling.ipynb
 ```
 
