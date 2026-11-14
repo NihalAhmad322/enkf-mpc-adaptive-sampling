@@ -54,8 +54,8 @@ The notebook uses paths relative to the repository root, so start Jupyter from t
 ## Running the notebook
 
 - **Sections 1–5** load the data and define the functions and parameters. Run them first.
-- **Section 6** runs the offline EnKF and writes Parquet files to `outputs/EnKF Frequency {f} Sigma {sigma} R {R} Trial {trial}/`. `t_windows` sets how many 12-hour windows are simulated from 2021-01-01. The river first reaches the 30 ft threshold on 2021-03-18, so the default of 5 windows is only a quick test: it contains no events, and every score comes out as 0. Use at least about 155 windows for meaningful scores.
-- **Section 7** scores the forecasts and writes `outputs/forecast_evaluation_metrics_*.csv`, replacing the precomputed files. Running it after a short test run overwrites them with zeros.
+- **Section 6** runs the offline EnKF and writes Parquet files to `outputs/EnKF Frequency {f} Sigma {sigma} R {R} Trial {trial}/`. `t_windows` sets how many 12-hour windows are simulated from 2021-01-01.
+- **Section 7** scores the forecasts and writes `outputs/forecast_evaluation_metrics_*.csv`, replacing the precomputed files.
 - **Sections 8 and 9.1** fit and plot the skill curves from those CSVs.
 - **Section 9.2** replays the EnKF from the Parquet files of a Section 6 run made with `viz=True`.
-- **Section 10** runs the MPC + online EnKF loop. Its skill curves are hard-coded, so it does not need the CSVs. It sets its own run parameters, overwriting Section 5's, so rerun Section 5 before going back to Sections 6–9.
+- **Section 10** runs the MPC + online EnKF loop. Its skill curves are derived from the .csv.
